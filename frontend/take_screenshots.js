@@ -16,7 +16,8 @@ async function run() {
   console.log("Loading landing page (desktop)...");
   await page.setViewport({ width: 1280, height: 800 });
   await page.goto("http://localhost:3000", { waitUntil: "load" });
-  await new Promise(r => setTimeout(r, 2000)); // wait for client-side hydration
+  await page.waitForSelector("h1", { timeout: 30000 });
+  await new Promise(r => setTimeout(r, 1000)); // wait for client-side hydration
   await page.screenshot({ path: path.join(artifactDir, "1_landing_desktop.png") });
   console.log("Captured: 1_landing_desktop.png");
 
@@ -31,6 +32,7 @@ async function run() {
   console.log("Navigating to Login page...");
   await page.setViewport({ width: 1280, height: 800 });
   await page.goto("http://localhost:3000/login", { waitUntil: "load" });
+  await page.waitForSelector("#email", { timeout: 30000 });
   await page.screenshot({ path: path.join(artifactDir, "3_login.png") });
   console.log("Captured: 3_login.png");
 

@@ -11,6 +11,9 @@ import {
   FileText,
   IdentificationCard,
   Notebook,
+  Question,
+  Checks,
+  Globe
 } from "@phosphor-icons/react";
 import {
   Accordion,
@@ -26,12 +29,12 @@ export default function MarketingPage() {
   const content = {
     en: {
       heroTitle: "Sri Lankan Citizen Services Workspace",
-      heroSubtitle: "Access all Sri Lankan government departments through a single, conversational AI workspace. OCR verification, real-time checklist tracking, and door-to-door delivery.",
+      heroSubtitle: "A single conversational AI workspace accessing all Sri Lankan government departments with OCR verification and tracked delivery.",
       searchPlaceholder: "Search civil registries, passports, identity cards...",
       servicesHeading: "Government Services Directory",
-      generalCta: "Start General Inquiry Chat",
-      generalCtaDesc: "Not sure what you need? Start a conversation with our central AI dispatcher.",
-      officialNotice: "Official Centralized Government Portal. Sri Lanka Civil Services.",
+      generalCta: "Open General Inquiry Console",
+      generalCtaDesc: "Not sure what you need? Open a conversation with our central agent dispatcher to find requirements, check eligibility, and generate checklists.",
+      officialNotice: "Official Centralised Government Portal. Sri Lanka Civil Services.",
       services: [
         {
           id: "passport-renewal",
@@ -64,11 +67,11 @@ export default function MarketingPage() {
     },
     si: {
       heroTitle: "ශ්‍රී ලංකා පුරවැසි සේවා සේවා ස්ථානය",
-      heroSubtitle: "එක් සංවාදශීලී AI සහායකයෙකු හරහා සියලුම ශ්‍රී ලංකා රාජ්‍ය දෙපාර්තමේන්තු වෙත ප්‍රවේශ වන්න. OCR ලේඛන සත්‍යාපනය සහ නිවසටම බෙදා හැරීම.",
+      heroSubtitle: "ලේඛන OCR සත්‍යාපනය සහ ලුහුබැඳ ගිය බෙදාහැරීම් සහිත තනි සංවාදශීලී AI සේවා ස්ථානයක්.",
       searchPlaceholder: "විදේශ ගමන් බලපත්‍ර, ජාතික හැඳුනුම්පත්, සිවිල් ලේඛන සොයන්න...",
       servicesHeading: "රාජ්‍ය සේවා නාමාවලිය",
-      generalCta: "පොදු විමසීම් සංවාදය අරඹන්න",
-      generalCtaDesc: "ඔබට අවශ්‍ය කුමක්දැයි විශ්වාස නැද්ද? අපගේ පොදු AI සහායකයා සමඟ සාකච්ඡා කරන්න.",
+      generalCta: "පොදු විමසීම් කොන්සෝලය විවෘත කරන්න",
+      generalCtaDesc: "ඔබට අවශ්‍ය කුමක්දැයි විශ්වාස නැද්ද? අවශ්‍යතා සෙවීමට, සුදුසුකම් පරීක්ෂා කිරීමට සහ පරීක්ෂණ ලැයිස්තු සකස් කිරීමට අපගේ මධ්‍යම AI සහායකයා සමඟ සාකච්ඡා කරන්න.",
       officialNotice: "නිල මධ්‍යගත රාජ්‍ය ද්වාරය. ශ්‍රී ලංකා සිවිල් සේවා.",
       services: [
         {
@@ -102,11 +105,11 @@ export default function MarketingPage() {
     },
     ta: {
       heroTitle: "இலங்கை குடிமக்கள் சேவை தளம்",
-      heroSubtitle: "ஒற்றை AI உரையாடல் தளம் மூலம் அனைத்து இலங்கை அரசாங்க திணைக்களங்களையும் அணுகவும். OCR ஆவண சரிபார்ப்பு மற்றும் வீட்டுக்கே விநியோகம்.",
+      heroSubtitle: "OCR ஆவண சரிபார்ப்பு மற்றும் கண்காணிப்பு விநியோகத்துடன் ஒரே உரையாடல் AI தளம்.",
       searchPlaceholder: "கடவுச்சீட்டு, தேசிய அடையாள அட்டை, சிவில் பதிவேடுகளைத் தேடுக...",
       servicesHeading: "அரசு சேவைகள் விபரக்கொத்து",
       generalCta: "பொதுவான விசாரணையைத் தொடங்குக",
-      generalCtaDesc: "உங்களுக்கு என்ன தேவை என்று தெரியவில்லையா? எங்கள் பொது AI உதவியாளருடன் உரையாடுங்கள்.",
+      generalCtaDesc: "உங்களுக்கு என்ன தேவை என்று தெரியவில்லையா? தேவைகளைக் கண்டறிய, தகுதியைச் சரிபார்க்க மற்றும் சரிபார்ப்பு பட்டியல்களை உருவாக்க எங்கள் மத்திய AI உதவியாளருடன் உரையாடுங்கள்.",
       officialNotice: "அதிகாரப்பூர்வ மத்திய அரசு போர்டல். இலங்கை சிவில் சேவைகள்.",
       services: [
         {
@@ -154,7 +157,7 @@ export default function MarketingPage() {
     si: {
       heading: "නිතර අසන ප්‍රශ්න (FAQ)",
       items: [
-        { q: "මට අවශ්‍ය ලේඛන මොනවාද?", a: "සේවාව අනුව අවශ්‍ය ලේඛන වෙනස් වේ. ගමන් බලපත්‍ර අලුත් කිරීම සඳහා හැඳුනුම්පත සහ උප්පැන්න සහතිකය අවශ්‍ය වේ." },
+        { q: "මට අවශ්‍ය ලේඛන මොනවාද?", a: "අවශ්‍ය ලේඛන සේවාව අනුව වෙනස් වේ. ගමන් බලපත්‍ර අලුත් කිරීම සඳහා හැඳුනුම්පත සහ උප්පැන්න සහතිකය අවශ්‍ය වේ." },
         { q: "ස්වයංක්‍රීය සත්‍යාපනය සඳහා කොපමණ කාලයක් ගතවේද?", a: "OCR පරිලෝකනය සජීවීව ක්‍රියාත්මක වන අතර තොරතුරු තහවුරු කිරීමට තත්පර 6ක් පමණ ගතවේ." },
         { q: "මෙම ද්වාරය ආරක්ෂිතද?", a: "ඔව්, ඔබ උඩුගත කරන සියලුම ලිපිගොනු සංකේතනය කර ඇති අතර රාජ්‍ය දත්ත පද්ධති මගින් පමණක් සත්‍යාපනය සිදු කරයි." }
       ]
@@ -169,7 +172,6 @@ export default function MarketingPage() {
     }
   };
 
-  // Filter services based on search bar query
   const filteredServices = currentContent.services.filter(
     (s) =>
       s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -178,142 +180,257 @@ export default function MarketingPage() {
   );
 
   return (
-    <div className="flex flex-col min-h-dvh bg-slate-50 font-sans">
-      {/* Top Header */}
-      <header className="bg-white border-b border-slate-200">
+    <div className={`flex flex-col min-h-dvh bg-slate-50 dark:bg-zinc-950 font-sans transition-colors duration-200 ${
+      lang === "si" ? "font-sinhala" : lang === "ta" ? "font-tamil" : "font-sans"
+    }`}>
+      <style>{`
+        @keyframes scan {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(220px); }
+          100% { transform: translateY(0); }
+        }
+        .ocr-scan-line {
+          animation: scan 4s ease-in-out infinite;
+        }
+      `}</style>
+
+      {/* Modern Coordinates Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+
+      {/* Header Panel */}
+      <header className="bg-white/85 dark:bg-zinc-900/85 backdrop-blur-md border-b border-slate-200 dark:border-zinc-800/80 sticky top-0 z-50 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white">
-              <Bank className="w-5 h-5" weight="fill" />
+            <div className="w-9 h-9 rounded-xl bg-slate-900 dark:bg-zinc-800 flex items-center justify-center text-white border border-slate-800 dark:border-zinc-700">
+              <Bank className="w-5 h-5 text-amber-500" weight="fill" />
             </div>
             <div>
-              <span className="font-bold text-lg text-primary tracking-tight">GovPilot AI</span>
-              <span className="text-[10px] block text-slate-400 font-bold tracking-widest uppercase">Sri Lanka</span>
+              <span className="font-black text-lg text-slate-900 dark:text-white tracking-tight">GovPilot AI</span>
+              <span className="text-[9px] block text-amber-600 dark:text-amber-500 font-bold tracking-widest uppercase">Sri Lanka</span>
             </div>
           </div>
 
-          {/* Language Switcher */}
-          <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-lg border border-slate-200">
-            {["en", "si", "ta"].map((l) => (
-              <button
-                key={l}
-                onClick={() => setLang(l as "en" | "si" | "ta")}
-                className={`px-2.5 py-1 text-xs font-bold rounded ${
-                  lang === l
-                    ? "bg-white text-primary shadow-sm"
-                    : "text-slate-600 hover:text-primary"
-                }`}
-              >
-                {l === "en" ? "English" : l === "si" ? "සිංහල" : "தமிழ்"}
-              </button>
-            ))}
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1 bg-slate-100 dark:bg-zinc-850 p-1 rounded-xl border border-slate-200/50 dark:border-zinc-800">
+              <Globe className="w-3.5 h-3.5 text-slate-400 dark:text-zinc-500 ml-1.5" />
+              {["en", "si", "ta"].map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l as "en" | "si" | "ta")}
+                  className={`px-3 py-1 text-xs font-bold rounded-lg transition-all ${
+                    lang === l
+                      ? "bg-white dark:bg-zinc-700 text-slate-900 dark:text-white shadow-sm"
+                      : "text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white"
+                  }`}
+                >
+                  {l === "en" ? "EN" : l === "si" ? "සිං" : "தமிழ்"}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Hero Search Section */}
-      <section className="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 text-amber-500 rounded-full border border-amber-500/20 text-xs font-bold uppercase tracking-wider">
-            <ShieldCheck className="w-4 h-4" weight="fill" />
-            <span>Official Government AI Portal</span>
+      {/* Hero Split Section */}
+      <section className="relative pt-12 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Hero Copy (7 cols) */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 dark:bg-emerald-500/5 text-emerald-600 dark:text-emerald-400 rounded-full border border-emerald-500/20 text-xs font-bold uppercase tracking-wider">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Official Government Portal</span>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-none text-slate-900 dark:text-white">
+              {currentContent.heroTitle}
+            </h1>
+
+            <p className="text-base sm:text-lg text-slate-600 dark:text-zinc-400 leading-relaxed max-w-[55ch]">
+              {currentContent.heroSubtitle}
+            </p>
+
+            {/* Unified Search Input */}
+            <div className="relative max-w-lg">
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 dark:text-zinc-500">
+                <MagnifyingGlass className="w-5 h-5" weight="bold" />
+              </div>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder={currentContent.searchPlaceholder}
+                className="w-full h-12 pl-11 pr-4 bg-white dark:bg-zinc-900 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-zinc-500 border border-slate-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-zinc-700 text-sm transition-all shadow-sm"
+              />
+            </div>
+
+            {/* Micro logo trust strip */}
+            <div className="pt-4 flex flex-wrap items-center gap-6 text-[10px] text-slate-400 dark:text-zinc-500 font-bold uppercase tracking-widest">
+              <span>Department of Immigration & Emigration</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-zinc-800"></span>
+              <span>Department of Registration of Persons</span>
+            </div>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
-            {currentContent.heroTitle}
-          </h2>
+          {/* Right Interactive Mock OCR Console (5 cols) */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative overflow-hidden backdrop-blur-md bg-white/75 dark:bg-zinc-900/75 border border-slate-200/60 dark:border-zinc-850 shadow-2xl p-6 rounded-2xl w-full max-w-md mx-auto">
+              
+              {/* Laser Scan Line */}
+              <div className="absolute left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-70 pointer-events-none ocr-scan-line" />
 
-          <p className="text-base sm:text-lg text-slate-350 max-w-2xl mx-auto leading-relaxed">
-            {currentContent.heroSubtitle}
-          </p>
+              {/* Mock Document Header */}
+              <div className="flex justify-between items-center border-b border-slate-100 dark:border-zinc-800 pb-4 mb-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 dark:text-zinc-500">Live OCR Scan Console</span>
+                </div>
+                <span className="text-[10px] font-bold text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded">99.8% Confidence</span>
+              </div>
 
-          {/* Unified search bar */}
-          <div className="max-w-xl mx-auto relative mt-4">
-            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-              <MagnifyingGlass className="w-5 h-5" weight="bold" />
+              {/* Mock NIC Layout */}
+              <div className="bg-slate-50 dark:bg-zinc-950/80 rounded-xl p-4 border border-slate-200/50 dark:border-zinc-800 relative space-y-4">
+                <div className="flex justify-between">
+                  <div className="space-y-1">
+                    <span className="text-[8px] font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-500">DEMOCRATIC SOCIALIST REPUBLIC OF SRI LANKA</span>
+                    <h4 className="text-xs font-black text-slate-900 dark:text-white">NATIONAL IDENTITY CARD</h4>
+                  </div>
+                  <div className="w-7 h-5 bg-amber-500/20 rounded flex items-center justify-center text-[8px] font-bold text-amber-700">LION</div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="col-span-1 aspect-[3/4] bg-slate-200 dark:bg-zinc-800 rounded-lg flex items-center justify-center text-slate-400 dark:text-zinc-600 text-xs">
+                    PHOTO
+                  </div>
+                  <div className="col-span-2 space-y-2 text-[10px] font-semibold text-slate-600 dark:text-zinc-400">
+                    <div className="p-1 border border-emerald-500/20 bg-emerald-500/5 rounded">
+                      <span className="text-[8px] block text-slate-400 dark:text-zinc-500 uppercase font-bold">NIC Number</span>
+                      <span className="font-mono text-slate-900 dark:text-white">199208401928</span>
+                    </div>
+                    <div className="p-1 border border-slate-100 dark:border-zinc-900 rounded">
+                      <span className="text-[8px] block text-slate-400 dark:text-zinc-500 uppercase font-bold">Full Name</span>
+                      <span className="text-slate-900 dark:text-white">K. L. Perera</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Extraction Metrics */}
+              <div className="mt-4 space-y-2 text-xs font-bold">
+                <div className="flex items-center justify-between text-slate-600 dark:text-zinc-400">
+                  <div className="flex items-center gap-1.5">
+                    <Checks className="w-4 h-4 text-emerald-500" />
+                    <span>NIC Structure Validated</span>
+                  </div>
+                  <span className="font-mono text-slate-400 dark:text-zinc-500">Form 20-A</span>
+                </div>
+                <div className="flex items-center justify-between text-slate-600 dark:text-zinc-400">
+                  <div className="flex items-center gap-1.5">
+                    <Checks className="w-4 h-4 text-emerald-500" />
+                    <span>Residency Verified</span>
+                  </div>
+                  <span className="font-mono text-slate-400 dark:text-zinc-500">Grama Niladhari</span>
+                </div>
+              </div>
+
             </div>
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder={currentContent.searchPlaceholder}
-              className="w-full h-12 pl-11 pr-4 bg-slate-800 text-white placeholder-slate-400 border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-base transition-all"
-            />
           </div>
         </div>
       </section>
 
-      {/* Services Grid Catalog */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-10">
-        
-        {/* Central Dispatcher Option */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-1.5">
-            <h3 className="text-lg font-black text-slate-900 tracking-tight">
-              {currentContent.generalCta}
-            </h3>
-            <p className="text-slate-600 text-sm max-w-[60ch] leading-relaxed">
-              {currentContent.generalCtaDesc}
-            </p>
-          </div>
-          <Link
-            href="/chat/new"
-            className="inline-flex items-center justify-center gap-2 h-12 px-6 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 active:scale-[0.98] transition-all text-sm text-center"
-          >
-            <span>Ask Central Dispatcher</span>
-            <ArrowRight className="w-4 h-4" weight="bold" />
-          </Link>
-        </div>
-
+      {/* Bento Grid Directory */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-12 relative z-10">
         <div className="space-y-6">
-          <h3 className="text-xl font-black text-slate-900 tracking-tight">
+          <h2 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
             {currentContent.servicesHeading}
-          </h3>
+          </h2>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Bento Cell 1: Main Dispatcher Prompt (Spans 2 columns) */}
+            <div className="md:col-span-2 bg-slate-900 dark:bg-zinc-900 text-white rounded-3xl p-8 shadow-xl flex flex-col justify-between min-h-[260px] border border-slate-800 dark:border-zinc-800 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-800/10 via-transparent to-transparent pointer-events-none" />
+              <div className="space-y-3 relative z-10">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 text-amber-500 rounded-full border border-amber-500/20 text-[10px] font-bold uppercase tracking-wider">
+                  Central Agent Router
+                </div>
+                <h3 className="text-2xl font-black tracking-tight text-white leading-tight">
+                  {currentContent.generalCta}
+                </h3>
+                <p className="text-slate-400 dark:text-zinc-400 text-sm max-w-[55ch] leading-relaxed">
+                  {currentContent.generalCtaDesc}
+                </p>
+              </div>
+              <Link
+                href="/chat/new"
+                className="mt-6 inline-flex items-center justify-center gap-2 h-12 px-6 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-xl active-press-trigger transition-all text-xs text-center relative z-10 w-fit"
+              >
+                <span>Ask Central Dispatcher</span>
+                <ArrowRight className="w-4 h-4" weight="bold" />
+              </Link>
+            </div>
+
+            {/* Bento Cell 2: Quick Information Card (Spans 1 column) */}
+            <div className="bg-amber-500/10 dark:bg-amber-500/5 border border-amber-500/20 rounded-3xl p-8 flex flex-col justify-between min-h-[260px]">
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-500 flex items-center justify-center">
+                  <Question className="w-5 h-5" weight="bold" />
+                </div>
+                <h4 className="text-lg font-black text-slate-900 dark:text-white tracking-tight">Need Assistance?</h4>
+                <p className="text-xs text-slate-500 dark:text-zinc-400 leading-relaxed font-semibold">
+                  Our system evaluates citizen documents, calculates processing fees, and schedules local physical biometric registrations automatically.
+                </p>
+              </div>
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 dark:text-zinc-500">GovPilot AI Platform v1.0</span>
+            </div>
+
+          </div>
+
+          {/* Catalog Services Row */}
           {filteredServices.length === 0 ? (
-            <div className="text-center py-12 bg-white border border-slate-200 rounded-2xl text-slate-400">
+            <div className="text-center py-12 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl text-slate-400">
               No matching government services found.
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {filteredServices.map((service) => {
                 const IconComponent = service.icon;
                 return (
                   <div
                     key={service.id}
-                    className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between space-y-6"
+                    className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm hover-card-elevation flex flex-col justify-between space-y-6"
                   >
                     <div className="space-y-3">
-                      <div className="w-10 h-10 rounded-xl bg-slate-100 text-primary flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-zinc-800 text-slate-900 dark:text-amber-500 flex items-center justify-center">
                         <IconComponent className="w-5 h-5" weight="duotone" />
                       </div>
                       <div className="space-y-1">
-                        <h4 className="font-extrabold text-slate-900 text-base leading-snug">
+                        <h4 className="font-extrabold text-slate-900 dark:text-white text-base leading-snug">
                           {service.name}
                         </h4>
-                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                        <p className="text-[9px] text-slate-400 dark:text-zinc-500 font-bold uppercase tracking-wider">
                           {service.agency}
                         </p>
                       </div>
-                      <p className="text-sm text-slate-500 leading-normal">
+                      <p className="text-sm text-slate-550 dark:text-zinc-400 leading-normal">
                         {service.desc}
                       </p>
                     </div>
 
                     <div className="space-y-4">
-                      {/* Meta information */}
-                      <div className="flex justify-between items-center text-xs font-semibold bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-                        <div className="flex items-center gap-1 text-slate-500">
+                      {/* Meta Parameters block */}
+                      <div className="flex justify-between items-center text-xs font-semibold bg-slate-50 dark:bg-zinc-950 p-2.5 rounded-lg border border-slate-100 dark:border-zinc-850">
+                        <div className="flex items-center gap-1 text-slate-500 dark:text-zinc-400">
                           <Clock className="w-3.5 h-3.5" />
                           <span>{service.time}</span>
                         </div>
-                        <span className="text-primary font-bold">{service.fee}</span>
+                        <span className="text-slate-900 dark:text-amber-500 font-bold">{service.fee}</span>
                       </div>
 
-                      {/* Start Application CTA */}
+                      {/* Start Application Button */}
                       <Link
                         href={`/chat/new?serviceId=${service.id}`}
-                        className="w-full inline-flex items-center justify-center gap-1.5 h-11 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary-light active:scale-[0.98] transition-all"
+                        className="w-full inline-flex items-center justify-center gap-1.5 h-11 bg-slate-900 hover:bg-slate-800 dark:bg-zinc-850 dark:hover:bg-zinc-800 text-white text-xs font-bold rounded-lg active-press-trigger transition-all"
                       >
                         <span>Start Application</span>
                         <ArrowRight className="w-3.5 h-3.5" weight="bold" />
@@ -327,18 +444,18 @@ export default function MarketingPage() {
         </div>
       </main>
 
-      {/* FAQ Accordion Section using shadcn/ui */}
-      <div className="max-w-3xl mx-auto py-12 px-4 sm:px-6 border-t border-slate-200 mt-16 space-y-6">
-        <h3 className="text-xl font-black text-slate-900 text-center tracking-tight">
+      {/* FAQ Panel */}
+      <div className="max-w-3xl mx-auto py-12 px-4 sm:px-6 border-t border-slate-200 dark:border-zinc-800 mt-16 space-y-6 relative z-10 w-full">
+        <h3 className="text-xl font-black text-slate-900 dark:text-white text-center tracking-tight">
           {faqContent[lang].heading}
         </h3>
         <Accordion className="w-full">
           {faqContent[lang].items.map((item, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left font-bold text-slate-800 hover:text-primary text-sm py-4">
+            <AccordionItem key={index} value={`item-${index}`} className="border-b border-slate-200 dark:border-zinc-800">
+              <AccordionTrigger className="text-left font-bold text-slate-800 dark:text-zinc-300 hover:text-amber-600 dark:hover:text-amber-500 text-sm py-4">
                 {item.q}
               </AccordionTrigger>
-              <AccordionContent className="text-slate-500 text-sm leading-relaxed pb-4">
+              <AccordionContent className="text-slate-550 dark:text-zinc-450 text-sm leading-relaxed pb-4">
                 {item.a}
               </AccordionContent>
             </AccordionItem>
@@ -347,8 +464,8 @@ export default function MarketingPage() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-slate-200 py-6">
-        <div className="max-w-7xl mx-auto px-4 text-center text-xs text-slate-400 font-bold tracking-wider uppercase">
+      <footer className="bg-white dark:bg-zinc-900 border-t border-slate-200 dark:border-zinc-800 py-6 relative z-10 transition-colors">
+        <div className="max-w-7xl mx-auto px-4 text-center text-xs text-slate-400 dark:text-zinc-500 font-bold tracking-wider uppercase">
           {currentContent.officialNotice}
         </div>
       </footer>
