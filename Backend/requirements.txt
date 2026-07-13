@@ -1,0 +1,1 @@
+# Dependencies: fastapi, uvicorn, sqlalchemy, psycopg2-binary, pydantic, langgraph, openrouter, langchain, easyocr, python-multipart

@@ -1,0 +1,5 @@
+{
+  "rules": [
+    { "id": "age", "operator": "gte", "value": 16, "field": "citizen_age" }
+  ]
+}

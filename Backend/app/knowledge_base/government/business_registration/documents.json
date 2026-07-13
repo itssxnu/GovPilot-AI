@@ -1,0 +1,6 @@
+{
+  "required": [
+    { "id": "form_1", "name": "Form 1: Company Registration", "type": "pdf" },
+    { "id": "articles", "name": "Articles of Association", "type": "pdf" }
+  ]
+}

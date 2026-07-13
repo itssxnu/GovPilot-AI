@@ -1,0 +1,7 @@
+{
+  "steps": [
+    { "id": 1, "label": "Upload Application Details" },
+    { "id": 2, "label": "Payment Verification" },
+    { "id": 3, "label": "Dispatch Copy" }
+  ]
+}

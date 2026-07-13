@@ -1,0 +1,5 @@
+{
+  "rules": [
+    { "id": "directors_count", "operator": "gte", "value": 1, "field": "directors_count" }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "required": [
+    { "id": "nic", "name": "National Identity Card", "type": "pdf_or_image" }
+  ]
+}

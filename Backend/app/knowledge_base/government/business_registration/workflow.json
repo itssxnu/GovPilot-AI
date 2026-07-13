@@ -1,0 +1,9 @@
+{
+  "steps": [
+    { "id": 1, "label": "Name Approval" },
+    { "id": 2, "label": "Upload Articles of Association" },
+    { "id": 3, "label": "Director Details Form" },
+    { "id": 4, "label": "Registration Fee Payment" },
+    { "id": 5, "label": "Certificate Issuance" }
+  ]
+}

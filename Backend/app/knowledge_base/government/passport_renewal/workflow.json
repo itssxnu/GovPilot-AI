@@ -1,0 +1,8 @@
+{
+  "steps": [
+    { "id": 1, "label": "Document Upload" },
+    { "id": 2, "label": "OCR Verification" },
+    { "id": 3, "label": "Officer Review" },
+    { "id": 4, "label": "Biometrics Booking" }
+  ]
+}

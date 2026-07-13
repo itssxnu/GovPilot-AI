@@ -1,0 +1,6 @@
+{
+  "required": [
+    { "id": "nic", "name": "National Identity Card", "type": "pdf_or_image" },
+    { "id": "old_passport", "name": "Previous Passport Bio Page", "type": "pdf_or_image" }
+  ]
+}
