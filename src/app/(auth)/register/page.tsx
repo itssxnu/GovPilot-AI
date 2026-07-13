@@ -30,29 +30,7 @@ export default function RegisterPage() {
     }
 
     try {
-      // Send user details to register API route
-      const regRes = await fetch("/api/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fullName,
-          nic,
-          email,
-          password,
-        }),
-      });
-
-      const regData = await regRes.json();
-
-      if (!regRes.ok) {
-        setError(regData.error || "Registration failed. Please try again.");
-        setLoading(false);
-        return;
-      }
-
-      // Registration succeeded, sign in immediately
+      // Mock registration: immediately sign in using credentials provider
       const res = await signIn("credentials", {
         email,
         password,
